@@ -3,15 +3,23 @@ This repository contains (hopefully) an easy to use tool to analyze RNASeq data.
 
 ## Dependencies
 bowtie2 http://bowtie-bio.sourceforge.net/bowtie2/index.shtml
+
 HTSeq https://htseq.readthedocs.io/en/master/
+
 deseq2 https://bioconductor.org/packages/release/bioc/html/DESeq2.html
+
 
 R packages:
 DESeq2
+
 plyr
+
 dplyr
+
 splitstackshape
+
 ggplot2
+
 RColorBrewer
 
 
