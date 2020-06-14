@@ -19,7 +19,25 @@ This can be done using tools like BlastKOALA or GhostKOALA https://www.kegg.jp/b
 A parsed, up to date version of the kegg ko database would be ideal https://www.genome.jp/kegg-bin/get_htext?ko00001. A parsed version is uploaded here along with the scripts. 
 
 
-## How to use- important information beta version
+## How to use- important information current beta version
+
+1) The fastq files require suffixes in the following format:  1_R1.fastq 1_R2.fastq, where the first digit is the rep number and R1 or R2 is the read number. 
+
+2) The file containing ko numbers for the species needs to have the suffix:  _ko.txt
+
+3) The kegg database file needs to have the suffix: _kegg.csv
+
+4) The current version assumes that the fastq files, gff file, kegg database file and ko file are in the working directory.
+
+5) The Shell script and R script need to be in working directory.
+
+6) The current version assumes the index and gff files have the same name. for e.g. if index was ecoli, gff file should be named ecoli.gff
+
+
+## Usage
+ 
+sbatch paired_end_duplicate_analysis.sh -1 <prefix of condition 1 fastq files> -2 <prefix of condition 1 fastq files> -i <index file> -p <path to index file> -s <strandedness> (yes/no/reverse) -f <feature>
+
 
 
 
