@@ -1,3 +1,9 @@
+#!/bin/bash
+#SBATCH -t 2:00:00
+#SBATCH --nodes=1 --ntasks-per-node=1
+#SBATCH --export=NONE
+
+
 
 while getopts "1:2:i:p:s:f:" opt; do
   case $opt in
