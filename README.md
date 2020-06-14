@@ -6,11 +6,10 @@ bowtie2 http://bowtie-bio.sourceforge.net/bowtie2/index.shtml
 
 HTSeq https://htseq.readthedocs.io/en/master/
 
-deseq2 https://bioconductor.org/packages/release/bioc/html/DESeq2.html
 
+R packages
 
-R packages:
-DESeq2
+DESeq2 https://bioconductor.org/packages/release/bioc/html/DESeq2.html
 
 plyr
 
