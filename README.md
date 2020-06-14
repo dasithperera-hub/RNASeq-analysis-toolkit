@@ -36,7 +36,7 @@ A parsed, up to date version of the kegg ko database would be ideal https://www.
 
 ## Usage
  
-sbatch paired_end_duplicate_analysis.sh -1 <prefix of condition 1 fastq files> -2 <prefix of condition 1 fastq files> -i <index file> -p <path to index file> -s <strandedness> (yes/no/reverse) -f <feature>
+sbatch paired_end_duplicate_analysis.sh -1 <prefix of condition 1 fastq files> -2 <prefix of condition 1 fastq files> -i <index file> -p <path to index file> -s <strandedness> (yes/no/reverse) -f <feature>. 
 
 
 
