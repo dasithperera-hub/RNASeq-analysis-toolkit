@@ -1,5 +1,5 @@
 # RNASeq-analysis-toolkit beta version
-This repository contains (hopefully) an easy to use tool to analyze RNASeq data. The tool assumes all pre-processing steps have been carried out. This includes:
+This repository contains (hopefully) an easy to use tool to analyze RNASeq data. The tool requires and uses bowtie2 http://bowtie-bio.sourceforge.net/bowtie2/index.shtml, HTSeq https://htseq.readthedocs.io/en/master/, deseq2 https://bioconductor.org/packages/release/bioc/html/DESeq2.html and R https://www.r-project.org/. The tool assumes all pre-processing steps have been carried out. This includes:
 
 1) Quality control
 Sequence quality can be assessed using tools such as fastqc https://www.bioinformatics.babraham.ac.uk/projects/fastqc/
@@ -36,7 +36,8 @@ A parsed, up to date version of the kegg ko database would be ideal https://www.
 
 ## Usage
  
-sbatch paired_end_duplicate_analysis.sh -1 <prefix of condition 1 fastq files> -2 <prefix of condition 1 fastq files> -i <index file> -p <path to index file> -s <strandedness> (yes/no/reverse) -f <feature>. 
+sbatch paired_end_duplicate_analysis.sh -1 (prefix of condition 1 fastq files) -2 (prefix of condition 1 fastq files) -i (index file) -p (path to index file) -s (strandedness) -f (feature). 
+
 
 
 
