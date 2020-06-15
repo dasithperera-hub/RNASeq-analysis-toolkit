@@ -1,4 +1,4 @@
-# RNASeq-analysis-toolkit version 1.0
+# RNASeq-analysis-toolkit beta version
 This repository contains (hopefully) an easy to use tool to analyze RNASeq data. 
 
 ## Dependencies
