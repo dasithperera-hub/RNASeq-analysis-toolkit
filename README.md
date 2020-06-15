@@ -69,6 +69,41 @@ A parsed, up to date version of the kegg ko database would be ideal https://www.
 sbatch paired_end_duplicate_analysis.sh -1 (prefix of condition 1 fastq files) -2 (prefix of condition 1 fastq files) -i (index file) -p (path to index file) -s (strandedness) -f (feature). 
 
 
+## Usage example
+
+Following files are in working directory:
+
+Condition 1 fastq files: ec1_R1.fastq ec1_R2.fastq ec2_R1.fastq ec2_R2.fastq
+
+Condition 2 fastq files: ecan1_R1.fastq ecan1_R2.fastq ecan2_R1.fastq ecan2_R2.fastq
+
+GFF file: ecoli.gff
+
+Kegg database table : May2020_kegg.csv
+
+Ecoli ko table: ec_ko.txt
+
+deseq_tablesandkegg.R
+
+paired_end_duplicate_analysis.sh
+
+
+Not in directory:
+
+bowtie index: ecoli
+
+path to bowtie index is /data/mramseylab/genome/ecoli/
+
+The intention is to check for DEG coding sequences using the reverse strandedness parameter.
+
+Run the following script:
+
+sbatch paired_end_duplicate_analysis.sh -1 ec -2 ecan -i ecoli -p /data/mramseylab/genome/ecoli/ -s reverse -f CDS
+
+
+
+
+
 
 
 
