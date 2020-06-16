@@ -21,6 +21,8 @@ ggplot2
 
 RColorBrewer
 
+EnhancedVolcano
+
 
 The tool assumes all pre-processing steps have been carried out. This includes:
 
