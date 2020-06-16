@@ -61,7 +61,9 @@ A parsed, up to date version of the kegg ko database would be ideal https://www.
 
 5) The Shell script and R script need to be in working directory.
 
-6) The current version assumes the index and gff files have the same name. for e.g. if index was ecoli, gff file should be named ecoli.gff
+6) The current version assumes the index and gff files have the same name. for e.g. if index was ecoli, gff file should be named ecoli.gff 
+
+7) For less straightforward experiments for eg: condition 1 contains paired reads and condition 2 contains unpaired reads. Run bowtie2 and HTSeq seperately. You may then use the script "standaloneR.sh" to carry out the analysis. However for this script to work the count files from HTSeq need to be in the format : condition1_*_counts#.txt for condition 1, where # is the rep number and * is a unique condition 1 identifier. Likewise the count files from condition 2 need to be in the format: condition2_*_counts#.txt. (ignore italics) 
 
 
 ## Usage
@@ -99,15 +101,3 @@ The intention is to check for DEG coding sequences using the reverse strandednes
 Run the following script:
 
 sbatch paired_end_duplicate_analysis.sh -1 ec -2 ecan -i ecoli -p /data/mramseylab/genome/ecoli/ -s reverse -f CDS
-
-
-
-
-
-
-
-
-
- 
-
-
