@@ -65,6 +65,7 @@ A parsed, up to date version of the kegg ko database would be ideal https://www.
 
 6) The current version assumes the index and gff files have the same name. for e.g. if index was ecoli, gff file should be named ecoli.gff 
 
+7) If HTSeq generated count files are already available the analysis can be carried out using standaloneR.sh. The count files would however need the prefix "condition1_" or "condition2_" and the suffix "_counts#.txt", where # is the number of the replicate. For eg. the third replicate for the second experiment called ecan will have a count file named "condition2_ecan_counts3.txt".       
 
 
 ## Usage
