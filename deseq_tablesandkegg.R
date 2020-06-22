@@ -52,7 +52,9 @@ deseqtable$fold_change <- 2^deseqtable[,3]
 
 library(splitstackshape)
 
-tab <- read.table("hpara.gff", sep="\t", header=FALSE, comment.char="#",
+gff <- dir(pattern="\\.gff$")
+
+tab <- read.table(gff, sep="\t", header=FALSE, comment.char="#",
                   na.strings=".", stringsAsFactors=FALSE,
                   quote="", fill=FALSE)
 
