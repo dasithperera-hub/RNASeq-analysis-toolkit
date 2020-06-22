@@ -93,7 +93,7 @@ write.csv(sorted_sigdown, file = "./rnaseq_analysis/downsig_conditon2_vs_conditi
 
 ko <- dir(pattern="\\_ko.txt$")
 
-ko_numbers <- read.table(ko, header = FALSE, fill = TRUE)
+ko_numbers <- read.table(ko, header = FALSE, fill = TRUE, na.strings=c("","NA"))
 
 
 names(ko_numbers)[1] <- "id"
