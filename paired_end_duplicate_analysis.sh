@@ -9,8 +9,9 @@ module load HTSeq/0.11.2-foss-2019b-Python-3.7.4
 module load R-bundle-Bioconductor/3.10-foss-2019b
 
 
-while getopts "1:2:i:p:s:f:" opt; do
+while getopts "d:1:2:i:p:s:f:" opt; do
   case $opt in
+    d) DIRFASTQ=$OPTARG     ;;  
     1) CONDITION1=$OPTARG      ;;
     2) CONDITION2=$OPTARG   ;;
     i) INDEX=$OPTARG	;;
@@ -20,6 +21,10 @@ while getopts "1:2:i:p:s:f:" opt; do
   esac
 done
 
+if [ -z "$DIRFASTQ" ]; then
+    echo "directory/path to fastqs were NOT given, exit."
+    exit 1;
+fi
 
 if [ -z "$CONDITION1" ]; then
     echo "condition1 was NOT given, exit."
@@ -47,11 +52,11 @@ if [ -z "$STRANDED" ]; then
 fi
 
 
-bowtie2 -x $DIRPATH/$INDEX -1 "$CONDITION1"1_R1.fastq -2 "$CONDITION1"1_R2.fastq -S "$CONDITION1"_SAMPLES1.sam
-bowtie2 -x $DIRPATH/$INDEX -1 "$CONDITION1"2_R1.fastq -2 "$CONDITION1"2_R2.fastq -S "$CONDITION1"_SAMPLES2.sam
+bowtie2 -x $DIRPATH/$INDEX -1 $DIRFASTQ"$CONDITION1"1_R1.fastq -2 $DIRFASTQ"$CONDITION1"1_R2.fastq -S "$CONDITION1"_SAMPLES1.sam
+bowtie2 -x $DIRPATH/$INDEX -1 $DIRFASTQ"$CONDITION1"2_R1.fastq -2 $DIRFASTQ"$CONDITION1"2_R2.fastq -S "$CONDITION1"_SAMPLES2.sam
 
-bowtie2 -x $DIRPATH/$INDEX -1 "$CONDITION2"1_R1.fastq -2 "$CONDITION2"1_R2.fastq -S "$CONDITION2"_SAMPLES1.sam
-bowtie2 -x $DIRPATH/$INDEX -1 "$CONDITION2"2_R1.fastq -2 "$CONDITION2"2_R2.fastq -S "$CONDITION2"_SAMPLES2.sam
+bowtie2 -x $DIRPATH/$INDEX -1 $DIRFASTQ"$CONDITION2"1_R1.fastq -2 $DIRFASTQ"$CONDITION2"1_R2.fastq -S "$CONDITION2"_SAMPLES1.sam
+bowtie2 -x $DIRPATH/$INDEX -1 $DIRFASTQ"$CONDITION2"2_R1.fastq -2 $DIRFASTQ"$CONDITION2"2_R2.fastq -S "$CONDITION2"_SAMPLES2.sam
 
 htseq-count -s $STRANDED -t $FEATURE -a 1 -m intersection-nonempty -i ID "$CONDITION1"_SAMPLES1.sam "$INDEX".gff > condition1_"$CONDITION1"_counts1.txt
 htseq-count -s $STRANDED -t $FEATURE -a 1 -m intersection-nonempty -i ID "$CONDITION1"_SAMPLES2.sam "$INDEX".gff > condition1_"$CONDITION1"_counts2.txt
