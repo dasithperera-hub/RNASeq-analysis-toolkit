@@ -59,7 +59,7 @@ A parsed, up to date version of the kegg ko database would be ideal https://www.
 
 3) The kegg database file needs to have the suffix: _kegg.csv
 
-4) The current version assumes that the fastq files, gff file, kegg database file and ko file are in the working directory.
+4) The current version assumes that the kegg database file and ko file are in the working directory.
 
 5) The Shell script and R script need to be in working directory.
 
