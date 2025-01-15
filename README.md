@@ -2,6 +2,8 @@
 This repository contains (hopefully) an easy to use tool to analyze RNASeq data. 
 
 Please reference the following if you use this tool:
+
+
 Perera D, McLean A, Morillo-López V, Cloutier-Leblanc K, Almeida E, Cabana K, Mark Welch J, Ramsey M. Mechanisms underlying interactions between two abundant oral commensal bacteria. ISME J. 2022 Apr;16(4):948-957. doi: 10.1038/s41396-021-01141-3. Epub 2021 Nov 3. PMID: 34732850; PMCID: PMC8940909.
 
 ## Dependencies
