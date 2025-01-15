@@ -1,6 +1,9 @@
 # RNASeq-analysis-toolkit beta version
 This repository contains (hopefully) an easy to use tool to analyze RNASeq data. 
 
+Please reference the following if you use this tool:
+Perera D, McLean A, Morillo-López V, Cloutier-Leblanc K, Almeida E, Cabana K, Mark Welch J, Ramsey M. Mechanisms underlying interactions between two abundant oral commensal bacteria. ISME J. 2022 Apr;16(4):948-957. doi: 10.1038/s41396-021-01141-3. Epub 2021 Nov 3. PMID: 34732850; PMCID: PMC8940909.
+
 ## Dependencies
 bowtie2 http://bowtie-bio.sourceforge.net/bowtie2/index.shtml
 
@@ -70,7 +73,7 @@ A parsed, up to date version of the kegg ko database would be ideal https://www.
 
 ## Usage
  
-sbatch paired_end_duplicate_analysis.sh -d (directory/path to fastq files) -1 (prefix of condition 1 fastq files) -2 (prefix of condition 1 fastq files) -i (index file) -p (path to index files) -s (strandedness) -f (feature). 
+sbatch paired_end_duplicate_analysis.sh -d (directory/path to fastq files) -1 (prefix of condition 1 fastq files) -2 (prefix of condition 2 fastq files) -i (index file) -p (path to index files) -s (strandedness) -f (feature). 
 
 
 ## Usage example
